@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Madklubben</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' media='screen' href='style.css'>
+</head>
+<body>
+    <header>
+        Madklubben
+    </header>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyC8CHKVtI8_AX9TjlxifHkSLK0ZYgtCyBM",
+          authDomain: "madklubben-7fb99.firebaseapp.com",
+          databaseURL: "https://madklubben-7fb99-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "madklubben-7fb99",
+          storageBucket: "madklubben-7fb99.appspot.com",
+          messagingSenderId: "1052445971672",
+          appId: "1:1052445971672:web:9695aac08e7c119c6773ad",
+          measurementId: "G-6DPVPZYTSH"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Firebase Database Interaction
+        const dbRef = ref(database, '/'); // reference to the root of your database
+        set(dbRef, {
+            yourDatay: 'HeyBoaasdadsy ',
+            nice: 'HeyBo'
+        });
+
+        onValue(dbRef, (snapshot) => {
+            const data = snapshot.val();
+            console.log(data);
+        });
+    </script>
+</body>
+</html>
