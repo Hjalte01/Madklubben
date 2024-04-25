@@ -1,14 +1,111 @@
+/* Tips to follow */
+
+/* Units */
+/*
+- font-size: rem
+- width: %, ch, max-width
+- margin/padding: rem, em(best often)
+- media queries: em
+*/
+
+
+/* Custom variables and more  */
+:root {
+    --primary-clr: #056365;
+    --secondary-clr: #FDF3A7;
+    --accent-clr: #67D695;
+    --dark-clr: #000000;
+    --light-clr: #F9F3F0;
+
+    --font-size-sm: 0.75rem;   /* 12px */
+    --font-size-base: 1rem;    /* 16px, base */
+    --font-size-md: 1.25rem;   /* 20px */
+    --font-size-lg: 1.5rem;    /* 24px */
+    --font-size-xl: 1.75rem;   /* 28px */
+    --font-size-xxl: 2rem;     /* 32px */
+    --font-size-xxxl: 2.25rem; /* 36px */
+
+    font-style: "koulen", "sans-serif";
+}
+
+/* body */
 
 body {
     margin: 0;
+    background-color: var(--primary-clr);
+    max-width: 100%;
+    overflow-x: hidden;
 }
+
+/* Header */
 
 header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: grey;
+    justify-content: space-between;
     width: 100%; 
-    height: 2em;
-    font-size: 4rem;
+    height: 3ch;
+    font-size: var(--font-size-xxxl);
+    margin-bottom: 0.5em;
 }
+
+header img {
+    margin: 0 0.5rem 0 0.5rem;
+    width: 2ch;
+}
+
+header h1 {
+    color: var(--secondary-clr);
+    font-size: 3rem;
+}
+
+header nav {
+    display: flex;
+    gap: 0.2ch;
+    flex-flow: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+header .burger_part {
+    background-color: var(--accent-clr);
+    width: 1.7ch;
+    height: 0.3ch;
+    border-radius: 0.75ch;
+}
+
+/* front page section */
+
+section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+section img:nth-child(odd) {
+    z-index: -1;
+    position: absolute;
+    top: 13%;
+    width: 40%;
+}
+
+section img:nth-of-type(1) {
+    rotate: -15deg;
+    left: -10%;
+}
+
+section img:nth-child(2) {
+    width: 50%;
+}
+
+section img:nth-of-type(3) {
+    rotate: 15deg;
+    right: -10%;
+}
+
+/* section h2 {
+    position: absolute;
+    color: var(--secondary-clr);
+    font-size: var(--font-size-xxxl);
+    top: 200%;
+} */
